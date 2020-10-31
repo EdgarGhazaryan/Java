@@ -1,6 +1,6 @@
 package homeworks;
 
-public class First {
+public class Lesson1 {
 
     public static void main(String[] args) {
         byte a = 2;
