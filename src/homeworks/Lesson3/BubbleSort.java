@@ -2,9 +2,11 @@ package homeworks.Lesson3;
 
 public class BubbleSort {
 
-    static int[] BubbleSort(int[] array) {
-        for (int i = 0; i < array.length - 1; i++) {
-            boolean flag = false;
+    static int[] sort(int[] array) {
+        boolean flag = true;
+        int i = 0;
+        while(flag) {
+            flag = false;
             for (int j = i + 1; j < array.length; j++) {
                 if (array[i] > array[j]) {
                     int tmp = array[i];
@@ -13,9 +15,7 @@ public class BubbleSort {
                     flag = true;
                 }
             }
-            if (!flag) {
-                break;
-            }
+            ++i;
         }
         return array;
     }
@@ -23,7 +23,7 @@ public class BubbleSort {
     public static void main(String[] args) {
         int[] array = new int[]{5, 10, 66, 0, 9, 101};
 
-        array = BubbleSort(array);
+        array = sort(array);
 
         for (var x : array) {
             System.out.println(x + " ");
