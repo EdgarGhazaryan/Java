@@ -1,0 +1,36 @@
+package homeworks.lesson4.inheritance;
+
+public class Destroyer extends AirVehicle {
+    private String typeOfRockets;
+    private double rangeOfHitting;
+
+    public Destroyer(String name, String owner, String typeOfFuel, int productionYear, int maxSpeed, double cost, double maxHeight, int countOfPilots, String typeOfRockets, double rangeOfHitting) {
+        super(name, owner, typeOfFuel, productionYear, maxSpeed, cost, maxHeight, countOfPilots);
+        setTypeOfRockets(typeOfRockets);
+        setRangeOfHitting(rangeOfHitting);
+    }
+
+    public String getTypeOfRockets() {
+        return typeOfRockets;
+    }
+
+    public void setTypeOfRockets(String typeOfRockets) {
+        if(typeOfRockets != null && !typeOfRockets.isEmpty()) {
+            this.typeOfRockets = typeOfRockets;
+        } else {
+            System.out.println("Invalid type of rockets");
+        }
+    }
+
+    public double getRangeOfHitting() {
+        return rangeOfHitting;
+    }
+
+    public void setRangeOfHitting(double rangeOfHitting) {
+        if(rangeOfHitting > 0) {
+            this.rangeOfHitting = rangeOfHitting;
+        } else {
+            System.out.println("Invalid range of hitting");
+        }
+    }
+}

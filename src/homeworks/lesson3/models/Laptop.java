@@ -1,4 +1,4 @@
-package homeworks.Lesson3.models;
+package homeworks.lesson3.models;
 
 public class Laptop {
     private String userName;

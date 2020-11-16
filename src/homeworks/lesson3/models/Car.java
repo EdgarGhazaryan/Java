@@ -1,4 +1,4 @@
-package homeworks.Lesson3.models;
+package homeworks.lesson3.models;
 
 public class Car {
     private String ownerName;

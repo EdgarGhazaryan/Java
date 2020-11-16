@@ -1,4 +1,4 @@
-package homeworks.Lesson3;
+package homeworks.lesson3;
 
 public class BubbleSort {
 

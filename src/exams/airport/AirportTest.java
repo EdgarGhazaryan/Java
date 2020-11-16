@@ -21,7 +21,7 @@ public class AirportTest {
         System.out.println("Task 3");
         ps.printPlaneInfo(ps.getNewerPlane(plane2, plane3));
         System.out.println("Task 4");
-        ps.getModelOfPlaneWithMoreWingspans(plane1, plane2);
+        System.out.println(ps.getModelOfPlaneWithMoreWingspans(plane1, plane2));
         System.out.println("Task 5");
         ps.printPlaneInfo(ps.getMostExpensive(plane1, plane2, plane3));
         System.out.println("Task 6");
