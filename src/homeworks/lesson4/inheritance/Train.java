@@ -19,4 +19,10 @@ public class Train extends LandVehicle {
             System.out.println("Invalid type of rails");
         }
     }
+
+    @Override
+    public String toString() {
+        return super.toString() + "\n" +
+                "typeOfRails='" + typeOfRails;
+    }
 }

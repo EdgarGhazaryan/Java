@@ -56,6 +56,6 @@ public class MethodsOfString {
 
         System.out.println("All characters in \"" + s + "\" to upper case: " + s.toUpperCase());
 
-        System.out.println("Unicode of \'" + s.charAt(2) + "\': " + s.codePointAt(2));
+        System.out.println("Unicode of '" + s.charAt(2) + "': " + s.codePointAt(2));
     }
 }

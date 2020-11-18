@@ -1,6 +1,6 @@
 package homeworks.lesson4.inheritance;
 
-public class Destroyer extends AirVehicle {
+public class Destroyer extends AirVehicle implements MilitaryAirForce {
     private String typeOfRockets;
     private double rangeOfHitting;
 
@@ -32,5 +32,22 @@ public class Destroyer extends AirVehicle {
         } else {
             System.out.println("Invalid range of hitting");
         }
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + "\n" +
+                "typeOfRockets='" + typeOfRockets + "\n" +
+                ", rangeOfHitting=" + rangeOfHitting;
+    }
+
+    @Override
+    public void shoot(String coordinate) {
+        System.out.println("Opened fire to target with coordinate " + coordinate);
+    }
+
+    @Override
+    public void giveCoordinateTo(String coordinate, Destroyer destroyer) {
+        System.out.println("Coordinate " + coordinate + "was given to destroyer: " + destroyer.getName());
     }
 }

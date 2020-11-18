@@ -1,6 +1,8 @@
 package homeworks.lesson4.inheritance;
 
-public class Vehicle {
+import java.util.Date;
+
+public class Vehicle implements Transport{
     private String name;
     private String owner;
     private String typeOfFuel;
@@ -97,5 +99,21 @@ public class Vehicle {
                 ", productionYear=" + productionYear + "\n" +
                 ", maxSpeed=" + maxSpeed + "\n" +
                 ", cost=" + cost;
+    }
+
+
+    @Override
+    public void engineOn() {
+        System.out.println("Engine start working.");
+    }
+
+    @Override
+    public void engineOff() {
+        System.out.println("Engine end working.");
+    }
+
+    @Override
+    public int age() {
+        return (new Date().getYear() + 1900) - productionYear;
     }
 }
