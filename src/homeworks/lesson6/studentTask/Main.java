@@ -4,8 +4,6 @@ import homeworks.lesson6.studentTask.model.Student;
 import homeworks.lesson6.studentTask.service.StudentService;
 
 import java.io.IOException;
-import java.net.URI;
-import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -32,7 +30,7 @@ public class Main {
         System.out.println("\nTask 4: Print student information having the minimal mark");
         studentService.printWithMinimalMark(students);
         System.out.println("\nTask 5: Print biggest male student information");
-        studentService.printBiggest(students);
+        studentService.printBiggestMale(students);
         System.out.println("\nTask 6: Print students sorted by mark");
         studentService.printByMark(students);
         System.out.println("\nTask 7: Print female students sorted by year");

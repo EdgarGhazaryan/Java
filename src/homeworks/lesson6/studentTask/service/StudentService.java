@@ -35,9 +35,9 @@ public class StudentService {
         System.out.println(min);
     }
 
-    public void printBiggest(Student[] students) {
+    public void printBiggestMale(Student[] students) {
         Student biggestMale = null;
-        int smallestYear = 0;
+        int smallestYear = 3000;
         for(int i = 0; i < students.length; ++i) {
             if(students[i].isMale() && students[i].getYear() < smallestYear) {
                 biggestMale = students[i];
