@@ -1,6 +1,6 @@
-package homeworks.lesson4.inheritance;
+package homeworks.lesson4.inheritance.model;
 
-public class AirVehicle extends Vehicle {
+public abstract class AirVehicle extends Vehicle {
     private double maxHeight;
     private int countOfPilots;
 
@@ -37,7 +37,7 @@ public class AirVehicle extends Vehicle {
     @Override
     public String toString() {
         return super.toString() + "\n" +
-                "maxHeight=" + maxHeight + "\n" +
-                ", countOfPilots=" + countOfPilots;
+                "max height: " + maxHeight + "\n" +
+                "count of pilots: " + countOfPilots;
     }
 }

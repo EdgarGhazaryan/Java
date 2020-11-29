@@ -1,4 +1,4 @@
-package homeworks.lesson4.inheritance;
+package homeworks.lesson4.inheritance.model;
 
 public class Train extends LandVehicle {
     private String typeOfRails;
@@ -23,6 +23,6 @@ public class Train extends LandVehicle {
     @Override
     public String toString() {
         return super.toString() + "\n" +
-                "typeOfRails='" + typeOfRails;
+                "type of rails: " + typeOfRails;
     }
 }

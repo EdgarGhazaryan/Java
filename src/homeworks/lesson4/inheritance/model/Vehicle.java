@@ -1,8 +1,10 @@
-package homeworks.lesson4.inheritance;
+package homeworks.lesson4.inheritance.model;
+
+import homeworks.lesson4.inheritance.interfaces.Transport;
 
 import java.util.Date;
 
-public class Vehicle implements Transport{
+public abstract class Vehicle implements Transport {
     private String name;
     private String owner;
     private String typeOfFuel;
@@ -93,14 +95,13 @@ public class Vehicle implements Transport{
 
     @Override
     public String toString() {
-        return  "name='" + name + "\n" +
-                ", owner='" + owner + "\n" +
-                ", typeOfFuel='" + typeOfFuel + "\n" +
-                ", productionYear=" + productionYear + "\n" +
-                ", maxSpeed=" + maxSpeed + "\n" +
-                ", cost=" + cost;
+        return  "name:" + name + "\n" +
+                "owner: " + owner + "\n" +
+                "type of fuel: " + typeOfFuel + "\n" +
+                "production year: " + productionYear + "\n" +
+                "max speed: " + maxSpeed + "\n" +
+                "cost: " + cost;
     }
-
 
     @Override
     public void engineOn() {

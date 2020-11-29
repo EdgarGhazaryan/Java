@@ -1,6 +1,6 @@
-package homeworks.lesson4.inheritance;
+package homeworks.lesson4.inheritance.model;
 
-public class LandVehicle extends Vehicle {
+public abstract class LandVehicle extends Vehicle {
     private int countOfWheels;
     private boolean automaticTransmission;
 
@@ -33,7 +33,7 @@ public class LandVehicle extends Vehicle {
     @Override
     public String toString() {
         return super.toString() + "\n" +
-                "countOfWheels=" + countOfWheels + "\n" +
-                ", automaticTransmission=" + automaticTransmission;
+                "count of wheels: " + countOfWheels + "\n" +
+                "automatic transmission: " + automaticTransmission;
     }
 }

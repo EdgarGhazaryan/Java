@@ -1,4 +1,6 @@
-package homeworks.lesson4.inheritance;
+package homeworks.lesson4.inheritance.model;
+
+import homeworks.lesson4.inheritance.interfaces.MilitaryAirForce;
 
 public class Destroyer extends AirVehicle implements MilitaryAirForce {
     private String typeOfRockets;
@@ -37,8 +39,8 @@ public class Destroyer extends AirVehicle implements MilitaryAirForce {
     @Override
     public String toString() {
         return super.toString() + "\n" +
-                "typeOfRockets='" + typeOfRockets + "\n" +
-                ", rangeOfHitting=" + rangeOfHitting;
+                "type of rockets: " + typeOfRockets + "\n" +
+                "range of hitting: " + rangeOfHitting;
     }
 
     @Override
