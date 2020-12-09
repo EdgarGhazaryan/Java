@@ -3,7 +3,6 @@ package homeworks.lesson4.inheritance;
 import homeworks.lesson4.inheritance.service.DestroyerService;
 import homeworks.lesson4.inheritance.service.TrainService;
 
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Menu {
@@ -20,13 +19,6 @@ public class Menu {
             System.out.println("1. Train menu");
             System.out.println("2. Destroyer menu");
             System.out.println("3. Exit");
-//            int n;
-//            try {
-//                n = s.nextInt();
-//            } catch (InputMismatchException e) {
-//                System.out.println("Enter valid number");
-//                continue;
-//            }
             int n = s.nextInt();
             switch (n) {
                 case 1:
