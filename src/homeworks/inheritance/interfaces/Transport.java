@@ -1,4 +1,4 @@
-package homeworks.lesson4.inheritance.interfaces;
+package homeworks.inheritance.interfaces;
 
 public interface Transport {
     void engineOn();

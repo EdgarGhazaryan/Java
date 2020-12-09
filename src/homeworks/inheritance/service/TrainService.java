@@ -1,6 +1,6 @@
-package homeworks.lesson4.inheritance.service;
+package homeworks.inheritance.service;
 
-import homeworks.lesson4.inheritance.model.Train;
+import homeworks.inheritance.model.Train;
 
 import java.io.IOException;
 import java.nio.file.Files;

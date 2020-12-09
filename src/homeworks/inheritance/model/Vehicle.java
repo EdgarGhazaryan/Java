@@ -1,6 +1,6 @@
-package homeworks.lesson4.inheritance.model;
+package homeworks.inheritance.model;
 
-import homeworks.lesson4.inheritance.interfaces.Transport;
+import homeworks.inheritance.interfaces.Transport;
 
 import java.util.Date;
 

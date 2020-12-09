@@ -1,7 +1,7 @@
-package homeworks.lesson4.inheritance;
+package homeworks.inheritance;
 
-import homeworks.lesson4.inheritance.service.DestroyerService;
-import homeworks.lesson4.inheritance.service.TrainService;
+import homeworks.inheritance.service.DestroyerService;
+import homeworks.inheritance.service.TrainService;
 
 import java.util.Scanner;
 

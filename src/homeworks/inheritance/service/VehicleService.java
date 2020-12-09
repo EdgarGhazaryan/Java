@@ -1,6 +1,6 @@
-package homeworks.lesson4.inheritance.service;
+package homeworks.inheritance.service;
 
-import homeworks.lesson4.inheritance.model.Vehicle;
+import homeworks.inheritance.model.Vehicle;
 
 import java.time.LocalDate;
 

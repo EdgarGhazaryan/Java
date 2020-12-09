@@ -1,6 +1,6 @@
-package homeworks.lesson4.inheritance.model;
+package homeworks.inheritance.model;
 
-import homeworks.lesson4.inheritance.interfaces.MilitaryAirForce;
+import homeworks.inheritance.interfaces.MilitaryAirForce;
 
 public class Destroyer extends AirVehicle implements MilitaryAirForce {
     private String typeOfRockets;

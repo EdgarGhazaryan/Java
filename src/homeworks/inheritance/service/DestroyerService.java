@@ -1,7 +1,6 @@
-package homeworks.lesson4.inheritance.service;
+package homeworks.inheritance.service;
 
-import homeworks.lesson4.inheritance.model.Destroyer;
-import homeworks.lesson4.inheritance.model.Vehicle;
+import homeworks.inheritance.model.Destroyer;
 
 import java.io.IOException;
 import java.nio.file.Files;

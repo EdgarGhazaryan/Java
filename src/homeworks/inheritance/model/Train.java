@@ -1,4 +1,4 @@
-package homeworks.lesson4.inheritance.model;
+package homeworks.inheritance.model;
 
 public class Train extends LandVehicle {
     private String typeOfRails;

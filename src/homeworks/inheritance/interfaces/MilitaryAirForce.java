@@ -1,6 +1,6 @@
-package homeworks.lesson4.inheritance.interfaces;
+package homeworks.inheritance.interfaces;
 
-import homeworks.lesson4.inheritance.model.Destroyer;
+import homeworks.inheritance.model.Destroyer;
 
 public interface MilitaryAirForce {
     void shoot(String coordinate);

@@ -1,4 +1,4 @@
-package homeworks.lesson4.inheritance.model;
+package homeworks.inheritance.model;
 
 public abstract class LandVehicle extends Vehicle {
     private int countOfWheels;
