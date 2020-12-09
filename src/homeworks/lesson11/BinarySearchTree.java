@@ -37,9 +37,9 @@ public class BinarySearchTree {
         } else if (value > root.value) {
             root.right = deleteRecursion(root.right, value);
         } else {
-            if (root.left == null) {
+            if (!root.hasLeft()) {
                 return root.right;
-            } else if (root.right == null) {
+            } else if (!root.hasRight()) {
                 return root.left;
             }
             root.value = minFromNode(root.right);
@@ -70,7 +70,7 @@ public class BinarySearchTree {
             throw new IllegalStateException("The tree is empty");
         }
         Node current = root;
-        while (current.right != null) {
+        while (current.hasRight()) {
             current = current.right;
         }
         return current.value;
@@ -85,7 +85,7 @@ public class BinarySearchTree {
 
     private int minFromNode(Node root) {
         Node current = root;
-        while (current.left != null) {
+        while (current.hasLeft()) {
             current = current.left;
         }
         return current.value;
@@ -100,11 +100,11 @@ public class BinarySearchTree {
             return;
         }
 
-        if(root.left != null) {
+        if(root.hasLeft()) {
             sortedPrintRecursion(root.left);
         }
         System.out.print(root.value + " ");
-        if(root.right != null) {
+        if(root.hasRight()) {
             sortedPrintRecursion(root.right);
         }
     }
@@ -119,10 +119,10 @@ public class BinarySearchTree {
         while (!deque.isEmpty()) {
             Node current = deque.poll();
             System.out.print(current.value + " ");
-            if(current.left != null) {
+            if(current.hasLeft()) {
                 deque.offer(current.left);
             }
-            if(current.right != null) {
+            if(current.hasRight()) {
                 deque.offer(current.right);
             }
         }
