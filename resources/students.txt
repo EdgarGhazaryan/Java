@@ -1,0 +1,9 @@
+hayk-21-1999
+anahit-45-2010
+vaghinak-12-2011
+ani-88-1997
+karen-46-2003
+max age: ani,88,1997
+min mark: vaghinak,12,2011
+Sorted by names: anahit,45,2010 ani,88,1997 hayk,21,1999 karen,46,2003 vaghinak,12,2011 
+Sorted by marks: vaghinak,12,2011 hayk,21,1999 anahit,45,2010 karen,46,2003 ani,88,1997
