@@ -17,28 +17,38 @@ public class Lesson13 {
         for (int i = 0; i < str.length(); i++) {
             Character current = str.charAt(i);
 
+            if(!isBracket(current)) {
+                continue;
+            }
+
             if (current.equals('(') || current.equals('{') || current.equals('[')) {
                 stack.push(current);
             } else if (stack.empty()) {
                 return false;
-            } else if (current.equals(')')) {
-                if (!stack.peek().equals('(')) {
-                    return false;
-                }
+            } else if(isAnotherBracket(stack.peek(), current)) {
                 stack.pop();
-            } else if (current.equals('}')) {
-                if (!stack.peek().equals('{')) {
-                    return false;
-                }
-                stack.pop();
-            } else if (current.equals(']')) {
-                if (!stack.peek().equals('[')) {
-                    return false;
-                }
-                stack.pop();
+            } else {
+                return false;
             }
         }
 
         return true;
+    }
+
+    private static boolean isBracket(Character ch) {
+        return (ch.equals('(') || ch.equals(')') ||ch.equals('{') ||ch.equals('}') ||ch.equals('[') ||ch.equals(']'));
+    }
+
+    private static boolean isAnotherBracket(Character ch1, Character ch2) {
+        if (ch1.equals('(') && ch2.equals(')'))
+            return true;
+
+        if (ch1.equals('[') && ch2.equals(']'))
+            return true;
+
+        if (ch1.equals('{') && ch2.equals('}'))
+            return true;
+
+        return false;
     }
 }
