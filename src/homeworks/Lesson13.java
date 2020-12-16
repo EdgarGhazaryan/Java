@@ -41,8 +41,4 @@ public class Lesson13 {
 
         return true;
     }
-
-    private static boolean isBracket(Character ch) {
-        return (ch.equals('(') || ch.equals(')') || ch.equals('{') || ch.equals('}') || ch.equals('[') || ch.equals(']'));
-    }
 }
