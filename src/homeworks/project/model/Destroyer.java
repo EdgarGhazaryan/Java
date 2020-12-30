@@ -75,9 +75,15 @@ public class Destroyer extends AirVehicle implements MilitaryAirForce {
 
     @Override
     public String toString() {
-        return super.toString() + "\n" +
-                "type of rockets: " + typeOfRockets + "\n" +
-                "range of hitting: " + rangeOfHitting + "\n" +
-                "aims to shoot: " + aimsToShoot + "\n";
+        return new StringBuilder()
+                .append(super.toString())
+                .append("\ntype of rockets: ")
+                .append(typeOfRockets)
+                .append("\nrange of hitting: ")
+                .append(rangeOfHitting)
+                .append("\naims to shoot: ")
+                .append(aimsToShoot)
+                .append("\n")
+                .toString();
     }
 }

@@ -97,12 +97,20 @@ public abstract class Vehicle implements Transport {
 
     @Override
     public String toString() {
-        return "name: " + name + "\n" +
-                "owner: " + owner + "\n" +
-                "type of fuel: " + typeOfFuel + "\n" +
-                "production year: " + productionYear + "\n" +
-                "max speed: " + maxSpeed + "\n" +
-                "cost: " + cost;
+        return new StringBuilder()
+                .append("name: ")
+                .append(name)
+                .append("\nowner: ")
+                .append(owner)
+                .append("\ntype of fuel: ")
+                .append(typeOfFuel)
+                .append("\nproduction year: ")
+                .append(productionYear)
+                .append("\nmax speed: ")
+                .append(maxSpeed)
+                .append("\ncost: ")
+                .append(cost)
+                .toString();
     }
 
     @Override

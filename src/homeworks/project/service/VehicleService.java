@@ -64,7 +64,7 @@ public class VehicleService {
             return;
         }
         for (Vehicle vehicle : vehicles) {
-            System.out.println(vehicle + "` fuel expense is: " + vehicle.fuelExpense() + "\n");
+            System.out.println(vehicle + "  fuel expense is: " + vehicle.fuelExpense() + "\n");
         }
     }
 }

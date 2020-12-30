@@ -36,8 +36,12 @@ public abstract class AirVehicle extends Vehicle {
 
     @Override
     public String toString() {
-        return super.toString() + "\n" +
-                "max height: " + maxHeight + "\n" +
-                "count of pilots: " + countOfPilots;
+        return new StringBuilder()
+                .append(super.toString())
+                .append("\nmax height: ")
+                .append(maxHeight)
+                .append("\ncount of pilots: ")
+                .append(countOfPilots)
+                .toString();
     }
 }

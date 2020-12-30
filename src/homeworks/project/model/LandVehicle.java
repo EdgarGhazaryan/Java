@@ -32,8 +32,12 @@ public abstract class LandVehicle extends Vehicle {
 
     @Override
     public String toString() {
-        return super.toString() + "\n" +
-                "count of wheels: " + countOfWheels + "\n" +
-                "automatic transmission: " + automaticTransmission;
+        return new StringBuilder()
+                .append(super.toString())
+                .append("\ncount of wheels: ")
+                .append(countOfWheels)
+                .append("\nautomatic transmission: ")
+                .append(automaticTransmission)
+                .toString();
     }
 }

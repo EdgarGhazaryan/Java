@@ -27,7 +27,11 @@ public class Train extends LandVehicle {
 
     @Override
     public String toString() {
-        return super.toString() + "\n" +
-                "type of rails: " + typeOfRails + "\n";
+        return new StringBuilder()
+                .append(super.toString())
+                .append("\ntype of rails: ")
+                .append(typeOfRails)
+                .append("\n")
+                .toString();
     }
 }
