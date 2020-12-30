@@ -1,4 +1,4 @@
-package homeworks.inheritance.model;
+package homeworks.project.model;
 
 public class Train extends LandVehicle {
     private String typeOfRails;
@@ -13,16 +13,21 @@ public class Train extends LandVehicle {
     }
 
     public void setTypeOfRails(String typeOfRails) {
-        if(typeOfRails != null && !typeOfRails.isEmpty()) {
+        if (typeOfRails != null && !typeOfRails.isEmpty()) {
             this.typeOfRails = typeOfRails;
         } else {
-            System.out.println("Invalid type of rails");
+            throw new IllegalArgumentException("Invalid type of rails");
         }
+    }
+
+    @Override
+    public double fuelExpense() {
+        return ((double) (1 / getProductionYear())) * getMaxSpeed() * 77;
     }
 
     @Override
     public String toString() {
         return super.toString() + "\n" +
-                "type of rails: " + typeOfRails;
+                "type of rails: " + typeOfRails + "\n";
     }
 }

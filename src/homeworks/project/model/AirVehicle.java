@@ -1,4 +1,4 @@
-package homeworks.inheritance.model;
+package homeworks.project.model;
 
 public abstract class AirVehicle extends Vehicle {
     private double maxHeight;
@@ -15,10 +15,10 @@ public abstract class AirVehicle extends Vehicle {
     }
 
     public void setMaxHeight(double maxHeight) {
-        if(maxHeight > 0) {
+        if (maxHeight > 0) {
             this.maxHeight = maxHeight;
         } else {
-            System.out.println("Invalid max weight");
+            throw new IllegalArgumentException("Invalid max weight");
         }
     }
 
@@ -27,10 +27,10 @@ public abstract class AirVehicle extends Vehicle {
     }
 
     public void setCountOfPilots(int countOfPilots) {
-        if(countOfPilots >= 0) {
+        if (countOfPilots >= 0) {
             this.countOfPilots = countOfPilots;
         } else {
-            System.out.println("Invalid count of pilots");
+            throw new IllegalArgumentException("Invalid count of pilots");
         }
     }
 

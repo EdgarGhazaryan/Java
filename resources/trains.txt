@@ -1,1 +1,5 @@
-e,d,f,2000,200,20.0,2,true,norm
+train1,owner1,fuel1,2001,21,21.0,2,true,rails1
+train2,owner2,fuel2,2002,22,22.0,2,false,rails2
+train3,owner1,fuel1,1999,21,21.0,2,true,rails1
+train4,owner1,fuel1,2004,21,21.0,2,true,rails1
+train5,owner1,fuel1,2005,21,21.0,2,true,rails1

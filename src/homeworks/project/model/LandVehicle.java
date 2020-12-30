@@ -1,4 +1,4 @@
-package homeworks.inheritance.model;
+package homeworks.project.model;
 
 public abstract class LandVehicle extends Vehicle {
     private int countOfWheels;
@@ -18,7 +18,7 @@ public abstract class LandVehicle extends Vehicle {
         if (countOfWheels > 0) {
             this.countOfWheels = countOfWheels;
         } else {
-            System.out.println("Invalid count of wheels");
+            throw new IllegalArgumentException("Invalid count of wheels");
         }
     }
 

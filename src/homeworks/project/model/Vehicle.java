@@ -1,8 +1,8 @@
-package homeworks.inheritance.model;
+package homeworks.project.model;
 
-import homeworks.inheritance.interfaces.Transport;
+import homeworks.project.interfaces.Transport;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public abstract class Vehicle implements Transport {
     private String name;
@@ -29,7 +29,7 @@ public abstract class Vehicle implements Transport {
         if (name != null && !name.isEmpty()) {
             this.name = name;
         } else {
-            System.out.println("Invalid vehicle name");
+            throw new IllegalArgumentException("Invalid vehicle name");
         }
     }
 
@@ -41,7 +41,7 @@ public abstract class Vehicle implements Transport {
         if (owner != null && !owner.isEmpty()) {
             this.owner = owner;
         } else {
-            System.out.println("Invalid owner name");
+            throw new IllegalArgumentException("Invalid owner name");
         }
     }
 
@@ -53,7 +53,7 @@ public abstract class Vehicle implements Transport {
         if (typeOfFuel != null && !typeOfFuel.isEmpty()) {
             this.typeOfFuel = typeOfFuel;
         } else {
-            System.out.println("Invalid type of fuel");
+            throw new IllegalArgumentException("Invalid type of fuel");
         }
     }
 
@@ -65,7 +65,7 @@ public abstract class Vehicle implements Transport {
         if (productionYear >= 1886 && productionYear <= 2020) {
             this.productionYear = productionYear;
         } else {
-            System.out.println("Invalid production year");
+            throw new IllegalArgumentException("Invalid production year");
         }
     }
 
@@ -74,10 +74,10 @@ public abstract class Vehicle implements Transport {
     }
 
     public void setMaxSpeed(int maxSpeed) {
-        if(maxSpeed > 0) {
+        if (maxSpeed > 0) {
             this.maxSpeed = maxSpeed;
         } else {
-            System.out.println("Invalid max speed");
+            throw new IllegalArgumentException("Invalid max speed");
         }
     }
 
@@ -86,16 +86,18 @@ public abstract class Vehicle implements Transport {
     }
 
     public void setCost(double cost) {
-        if(cost >= 0) {
+        if (cost >= 0) {
             this.cost = cost;
         } else {
-            System.out.println("Invalid cost");
+            throw new IllegalArgumentException("Invalid vehicle cost");
         }
     }
 
+    public abstract double fuelExpense();
+
     @Override
     public String toString() {
-        return  "name:" + name + "\n" +
+        return "name: " + name + "\n" +
                 "owner: " + owner + "\n" +
                 "type of fuel: " + typeOfFuel + "\n" +
                 "production year: " + productionYear + "\n" +
@@ -115,6 +117,6 @@ public abstract class Vehicle implements Transport {
 
     @Override
     public int age() {
-        return (new Date().getYear() + 1900) - productionYear;
+        return LocalDate.now().getYear() - productionYear;
     }
 }

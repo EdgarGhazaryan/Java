@@ -1,15 +1,26 @@
-package homeworks.inheritance.service;
+package homeworks.project.service;
 
-import homeworks.inheritance.model.Train;
+import homeworks.project.configuration.DatabasePaths;
+import homeworks.project.model.Train;
 
 import java.io.IOException;
 import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
-public class TrainService extends VehicleService {
+public class TrainService extends VehicleService implements DatabasePaths {
+
+    private static final TrainService instance = new TrainService();
+
+    private TrainService() {
+    }
+
+    public static TrainService getInstance() {
+        return instance;
+    }
+
     public void create() {
         Scanner s = new Scanner(System.in);
         System.out.println("Enter train name");
@@ -32,41 +43,47 @@ public class TrainService extends VehicleService {
         s.nextLine();
         String rails = s.nextLine();
 
-        Train t = new Train(name, owner, fuel, year, maxSpeed, cost, wheels, transmission, rails);
+        Train t;
+        try {
+            t = new Train(name, owner, fuel, year, maxSpeed, cost, wheels, transmission, rails);
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+            return;
+        }
+
         String data = String.join(",", t.getName(), t.getOwner(), t.getTypeOfFuel(), Integer.toString(t.getProductionYear()),
                 Integer.toString(t.getMaxSpeed()), Double.toString(t.getCost()), Integer.toString(t.getCountOfWheels()),
                 Boolean.toString(transmission), rails) + "\n";
         try {
-            Files.write(Paths.get("C:\\Users\\User\\Desktop\\Java\\resources\\trains.txt"), data.getBytes(), StandardOpenOption.APPEND);
+            Files.write(trainsPath, data.getBytes(), StandardOpenOption.APPEND);
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println("Can`t write the train in database");
         }
     }
 
-    public Train[] getAllTrains() {
-        Path path = Paths.get("C:\\Users\\User\\Desktop\\Java\\resources\\trains.txt");
-        String[] lines = new String[0];
+    public List<Train> getAllTrains() {
+        List<String> lines = null;
         try {
-            lines = Files.readAllLines(path).toArray(new String[0]);
+            lines = Files.readAllLines(trainsPath);
         } catch (IOException e) {
             e.printStackTrace();
         }
-        Train[] trains = new Train[lines.length];
-        for (int i = 0; i < lines.length; ++i) {
-            String[] s = lines[i].split(",");
-            trains[i] = new Train(s[0], s[1], s[2], Integer.parseInt(s[3]), Integer.parseInt(s[4]), Double.parseDouble(s[5]),
-                    Integer.parseInt(s[6]), Boolean.parseBoolean(s[7]), s[8]);
+        List<Train> trains = new ArrayList<>();
+        for (String line : lines) {
+            String[] s = line.split(",");
+            trains.add(new Train(s[0], s[1], s[2], Integer.parseInt(s[3]), Integer.parseInt(s[4]), Double.parseDouble(s[5]),
+                    Integer.parseInt(s[6]), Boolean.parseBoolean(s[7]), s[8]));
         }
         return trains;
     }
 
-    public void printWithAutomaticTransmission(Train[] trains) {
-        if(trains.length == 0) {
+    public void printWithAutomaticTransmission(List<Train> trains) {
+        if (trains.isEmpty()) {
             System.out.println("There is no train");
             return;
         }
-        for(Train train : trains) {
-            if(train.isAutomaticTransmission()) {
+        for (Train train : trains) {
+            if (train.isAutomaticTransmission()) {
                 System.out.println(train);
             }
         }
